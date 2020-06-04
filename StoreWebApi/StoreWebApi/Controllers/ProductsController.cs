@@ -15,18 +15,18 @@ namespace StoreWebApi.Controllers
     [Route("api/Products")]
     public class ProductsController : Controller
     {
-        private readonly StoreDBContext _context;
+        private readonly StoreDBContextTwo _context;
 
-        public ProductsController(StoreDBContext context)
+        public ProductsController(StoreDBContextTwo context)
         {
             _context = context;
         }
 
         // GET: api/Products
         [HttpGet]
-        public IEnumerable<ProductDTO> GetProduct()
+        public IEnumerable<ProductoDTO> GetProduct()
         {
-            return Mapper.Map<IEnumerable<ProductDTO>>(_context.Product.OrderBy(x => x.Name));
+            return Mapper.Map<IEnumerable<ProductoDTO>>(_context.Product.OrderBy(x => x.Name));
         }
 
         // GET: api/Products/5
@@ -45,7 +45,7 @@ namespace StoreWebApi.Controllers
                 return NotFound();
             }
 
-            return Ok(Mapper.Map<ProductDTO>(product));
+            return Ok(Mapper.Map<ProductoDTO>(product));
         }
 
         // PUT: api/Products/5
@@ -123,7 +123,7 @@ namespace StoreWebApi.Controllers
             _context.Product.Remove(product);
             await _context.SaveChangesAsync();
 
-            return Ok(Mapper.Map<ProductDTO>(product));
+            return Ok(Mapper.Map<ProductoDTO>(product));
         }
 
         private bool ProductExists(int id)

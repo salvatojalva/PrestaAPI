@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace StoreWebApi.Models
 {
-    public partial class StoreDBContext : DbContext
+    public partial class StoreDBContextTwo : DbContext
     {
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<CustomerOrder> CustomerOrder { get; set; }
@@ -13,7 +13,18 @@ namespace StoreWebApi.Models
         public virtual DbSet<OrderStatus> OrderStatus { get; set; }
         public virtual DbSet<Product> Product { get; set; }
 
-        public StoreDBContext(DbContextOptions<StoreDBContext> options) : base(options)
+        public virtual DbSet<Categoria> Categoria { get; set; }
+        public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<ProductoInventario> ProductoInventario { get; set; }
+        public virtual DbSet<Reserva> Reserva { get; set; }
+        public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Encargado> Encargado { get; set; }
+        public virtual DbSet<Prestamo> Prestamo { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Retorno> Retorno { get; set; }
+
+
+        public StoreDBContextTwo(DbContextOptions<StoreDBContextTwo> options) : base(options)
         {
 
         }
@@ -139,6 +150,7 @@ namespace StoreWebApi.Models
 
                 entity.Property(e => e.UnitPrice).HasColumnType("decimal(8, 2)");
             });
+
         }
     }
 }

@@ -16,9 +16,9 @@ namespace StoreWebApi.Controllers
     [Route("api/Employees")]
     public class EmployeesController : Controller
     {
-        private readonly StoreDBContext _context;
+        private readonly StoreDBContextTwo _context;
 
-        public EmployeesController(StoreDBContext context)
+        public EmployeesController(StoreDBContextTwo context)
         {
             _context = context;
         }

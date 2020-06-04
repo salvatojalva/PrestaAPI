@@ -15,9 +15,9 @@ namespace StoreWebApi.Controllers
     [Route("api/OrderStatuses")]
     public class OrderStatusesController : Controller
     {
-        private readonly StoreDBContext _context;
+        private readonly StoreDBContextTwo _context;
 
-        public OrderStatusesController(StoreDBContext context)
+        public OrderStatusesController(StoreDBContextTwo context)
         {
             _context = context;
         }

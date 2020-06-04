@@ -11,6 +11,7 @@ namespace StoreWebApi.DTOs
         public decimal Amount { get; set; }
 
         public CustomerOrderDTO CustomerOrder { get; set; }
+
         public ProductDTO Product { get; set; }
     }
 }

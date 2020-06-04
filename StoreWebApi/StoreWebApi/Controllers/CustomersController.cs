@@ -17,9 +17,9 @@ namespace StoreWebApi.Controllers
     [Route("api/Customers")]
     public class CustomersController : Controller
     {
-        private readonly StoreDBContext _context;
+        private readonly StoreDBContextTwo _context;
 
-        public CustomersController(StoreDBContext context)
+        public CustomersController(StoreDBContextTwo context)
         {
             _context = context;
         }

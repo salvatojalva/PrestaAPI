@@ -29,7 +29,7 @@ namespace StoreWebApi
             services.AddMvc().AddJsonOptions(
                 options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
-            services.AddDbContext<Models.StoreDBContext>(
+            services.AddDbContext<Models.StoreDBContextTwo>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("StoreDBContext")));
 
             //5
